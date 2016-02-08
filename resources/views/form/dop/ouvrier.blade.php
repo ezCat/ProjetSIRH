@@ -22,14 +22,14 @@
     {!! Form::label('date_demande', 'Date de la demande : ') !!}
     {!! Form::date('date_demande', null, ['class' => 'form-control']) !!}<br>
 
-    {!! Form::checkbox('creation_de_poste', null, ['class' => 'form-control']) !!} Création de poste<br><br>
+    {!! Form::checkbox('creation_de_poste', 1, null) !!} Création de poste<br><br>
 
-    {!! Form::checkbox('remplacement', null, ['class' => 'form-control']) !!} Remplacement<br><br>
+    {!! Form::checkbox('remplacement', 1, null) !!} Remplacement<br><br>
 
     {!! Form::label('nom_remplacement', 'Nom remplaçant :') !!}
     {!! Form::text('nom_remplacement', null, ['class' => 'form-control']) !!}<br>
 
-    {!! Form::checkbox('accroissement_activite', null, ['class' => 'form-control']) !!} Accroissement d'activité<br><br>
+    {!! Form::checkbox('accroissement_activite', 1, null) !!} Accroissement d'activité<br><br>
 
     {!! Form::label('raison_activite', 'Raison de l\'activité : ') !!}
     {!! Form::text('raison_activite', null, ['class' => 'form-control']) !!}<br>
@@ -77,23 +77,25 @@
     {!! Form::label('duree_travail_hebdomadaire', 'Durée de travail hebdomadaire : ') !!}
     {!! Form::text('duree_travail_hebdomadaire', null, ['class' => 'form-control']) !!}<br>
 
-    {!! Form::label('reorganisation_tache', 'Réorganisation des taches : ') !!}
-    {!! Form::text('reorganisation_tache', null, ['class' => 'form-control']) !!}<br>
+    {!! Form::label('', 'A renseigner par le Responsable RH ') !!}<br><br>
 
-    {!! Form::label('mobilite_interne', 'Mobilité interne : ') !!}
-    {!! Form::text('mobilite_interne', null, ['class' => 'form-control']) !!}<br>
+    La présente demande d’ouverture de poste peut-elle être pourvue par :<br><br>
+
+    {!! Form::checkbox('reorganisation_tache', 1, null) !!} Réorganisation des taches au sein du service <br>
+    {!! Form::checkbox('mobilite_interne', 1, null) !!} Mobilité interne <br><br>
 
     {!! Form::label('commentaire_rh', 'Commentaires/Observations : ') !!}
-    {!! Form::text('commentaire_rh', null, ['class' => 'form-control']) !!}<br>
+    {!! Form::textarea('commentaire_rh', null, ['class' => 'form-control']) !!}<br>
 
+    {!! Form::label('', 'Informations sur le RRH : ') !!}<br>
     {!! Form::label('nom_rh_signature', 'Nom : ') !!}
     {!! Form::text('nom_rh_signature', null, ['class' => 'form-control']) !!}<br>
 
     {!! Form::label('date_rh_signature', 'Date : ') !!}
-    {!! Form::text('date_rh_signature', null, ['class' => 'form-control']) !!}<br>
+    {!! Form::text('date_rh_signature', null, ['class' => 'form-control']) !!}<br><br><br>
 
-    {!! Form::label('cas_dop', 'Cas à choisir : ') !!}
-    {!! Form::text('cas_dop', null, ['class' => 'form-control']) !!}<br>
+    {!! Form::label('cas_dop', 'VISA des signataires, cas à choisir : ') !!}
+    {!! Form::select('cas_dop', $cas, null, ['class' => 'form-control']) !!}<br>
 
     {!! Form::label('date_publication_taleo', 'Date de publication TALEO : ') !!}
     {!! Form::date('date_publication_taleo', null, ['class' => 'form-control']) !!}<br>
@@ -101,12 +103,11 @@
     {!! Form::label('numéro_offre', 'Numéro de l\'offre : ') !!}
     {!! Form::text('numéro_offre', null, ['class' => 'form-control']) !!}<br>
 
-    {!! Form::label('descriptif_poste', 'Description du poste : ') !!}
-    {!! Form::text('descriptif_poste', null, ['class' => 'form-control']) !!}<br>
-
-    {!! Form::label('profil_requis', 'Profil requis : ') !!}
-    {!! Form::text('profil_requis', null, ['class' => 'form-control']) !!}<br>
+    {!! Form::checkbox('descriptif_poste', 1, null) !!} Descriptif de poste<br>
+    {!! Form::checkbox('profil_requis', 1, null) !!} Profil requis<br>
 
     {!! Form::close() !!}
+
+    <br>
 
 @endsection

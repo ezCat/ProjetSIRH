@@ -27,7 +27,9 @@ class DopController extends Controller
      */
     public function create()
     {
-        return view('form.dop.ouvrier');
+        $cas = array('Cas n°1 > REMPLACEMENT OU CREATION DE POSTE BUDGETE AU SEIN D’UNE AGENCE/D’ACTIVITES',
+            'Cas n°2 > CREATION DE POSTE NON BUDGETE AU SEIN D’UNE AGENCE/D’ACTIVITES');
+        return view('form.dop.ouvrier', compact('cas'));
     }
 
     /**
