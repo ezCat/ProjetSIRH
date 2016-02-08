@@ -13,9 +13,6 @@
     {!! Form::label('prenom', 'Prénom : ') !!}
     {!! Form::text('prenom', null, ['class' => 'form-control']) !!}
 
-    {!! Form::label('prenom', 'Prénom : ') !!}
-    {!! Form::text('prenom', null, ['class' => 'form-control']) !!}
-
     {!! Form::close() !!}
 
 @endsection
