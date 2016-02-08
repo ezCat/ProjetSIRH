@@ -1,4 +1,4 @@
-@extends('home')
+@extends('default')
 
 <head>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/start/jquery-ui.css">
@@ -41,7 +41,7 @@
             {!! Form::text('direction', null, ['class' => 'form-control']) !!}<br>
 
             {!! Form::label('date_debut_souhaite', 'Date de début souhaitée : ') !!}
-            {!! Form::text('date_debut_souhaite', null, ['class' => 'form-control']) !!}<br>
+            {!! Form::date('date_debut_souhaite', null, ['class' => 'form-control']) !!}<br>
 
             {!! Form::label('date_demande', 'Date de la demande : ') !!}
             {!! Form::date('date_demande', null, ['class' => 'form-control']) !!}<br>
@@ -124,7 +124,7 @@
         </div>
         <div id="tabs-6">
             {!! Form::label('cas_dop', 'VISA des signataires, cas à choisir : ') !!}
-            {!! Form::select('cas_dop', $cas, null, ['class' => 'form-control']) !!}<br>
+            {!! Form::select('cas_dop', $cas , null, ['class' => 'form-control']) !!}<br>
         </div>
         <div id="tabs-7">
             {!! Form::label('date_publication_taleo', 'Date de publication TALEO : ') !!}

@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', ['as' => 'home', function () {
-    return view('accueil');
-}]);
+Route::get('/', ['as' => 'home', 'uses' => 'AccueilController@index']);
 
 Route::resource('dop', 'DopController');
 

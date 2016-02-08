@@ -12,7 +12,7 @@ class CreateTableDOPTest extends Migration
      */
     public function up()
     {
-        Schema::create('DOP_test_ouvrier', function (Blueprint $table) {
+        Schema::create('dop_test', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nom');
             $table->string('prenom');

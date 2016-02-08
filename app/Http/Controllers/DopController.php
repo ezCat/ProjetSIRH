@@ -41,7 +41,7 @@ class DopController extends Controller
     public function store(Request $request)
     {
         DopTest::create($request->all());
-        return Redirect::to('home');
+        return redirect('/');
     }
 
     /**
@@ -52,8 +52,8 @@ class DopController extends Controller
      */
     public function show($id)
     {
-        DopTest::get($id);
-        return view('dop.ouvrier');
+        $document = DopTest::findOrFail($id);
+        return view('dop.ouvrier', compact('document'));
     }
 
     /**
