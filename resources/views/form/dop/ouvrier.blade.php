@@ -136,12 +136,11 @@
         <div id="tabs-8">
             {!! Form::checkbox('descriptif_poste', 1, null) !!} Descriptif de poste<br>
             {!! Form::checkbox('profil_requis', 1, null) !!} Profil requis<br>
+            {!! Form::submit('Soumettre', ['class' => 'btn btn-primary']) !!}
         </div>
     </div>
 
-    <br>
-
-    {!! Form::submit('Soumettre', ['class' => 'btn btn-primary']) !!}
+    <br><br><br>
 
     {!! Form::close() !!}
 

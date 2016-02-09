@@ -11,6 +11,7 @@
     <table border="1" style="width: 100%; border-collapse: collapse;">
         <thead>
         <tr>
+            {{--<th width="20%"><img src="{{ assert('img/suez.png') }}"></th>--}}
             <th width="20%">SUEZ</th>
             <th>
                 FORMULAIRE DE DEMANDE D’OUVERTURE DE POSTE (DOP)
@@ -29,15 +30,15 @@
         <tbody>
         <tr>
             <td>
-                <b><u><i>Demandeur :</i></u></b><br>
-                Nom : Prenom :<br>
-                Direction :<br>
-                Entité :<br>
-                Date de début souhaité :
+                <b><u><i>Demandeur : </i></u></b><br>
+                Nom : {{ $document->nom }} Prenom :{{ $document->prenom }}<br>
+                Direction : {{ $document->direction }}<br>
+                Entité :{{ $document->entite }}<br>
+                Date de début souhaité :{{ $document->date_debut_souhaite }}
             </td>
             <td>
                 <b>Visa du demandeur</b><br>
-                Date de la demande<br>
+                Date de la demande : {{ $document->date_demande }}<br>
                 Signature :<br>
 
             </td>
@@ -56,14 +57,14 @@
         </tr>
         <tr>
             <td>
-                Création de poste :      Oui       Non<br>
-                Remplacement de : ………………………………………………………………<br>
-                Accroissement d’activité : ………………………………………………………
+                Création de poste :{{ $document->creation_poste }}<br>
+                Remplacement de : {{ $document->remplacement }}<br>
+                Accroissement d’activité : {{ $document->accroissement_activite }}
             </td>
         </tr>
         <tr>
             <td>
-                <b><u>Poste budgété sur 2015 :  Oui       Non</u></b>
+                <b><u>Poste budgété sur 2015 : {{ $document->poste_budgete }}</u></b>
             </td>
         </tr>
         </tbody>
@@ -77,28 +78,20 @@
         <tbody>
         <tr>
             <td>
-                <b><u><i>Intitulé du poste :</i></u></b> ..........................................................……………………………………………………………….<br>
-                <b><u><i>Site :</i></u></b> …………………………………………………………………………………………………………………………..<br>
-                <b><u><i>Responsable hiérarchique :</i></u></b> ……………………………………………………………………………………………...<br>
+                <b><u><i>Intitulé du poste :</i></u></b> {{ $document->intitule_poste }}<br>
+                <b><u><i>Site :</i></u></b> {{ $document->site }}<br>
+                <b><u><i>Responsable hiérarchique :</i></u></b>{{ $document->responsable_hierarchique }}<br>
                 <b><u><i>Contexte du poste :</i></u></b><br>
-                -<br>
-                -<br>
-                -<br>
-                -<br>
+                {{ $document->contexte_poste }}
                 <b><u><i>Principales missions  (descriptif à joindre en annexe) :</i></u></b><br>
-                - <br>
-                -<br>
-                -<br>
-                -<br>
-                -<br>
-                -<br>
+                {{ $document->principale_mission }}
 
                 <br>
 
                 <b><u>Rémunération :</u></b><br>
-                Salaire de base annuel :…………………………………..……………………………………………………………………........<br>
-                Variable (%) : 	  Non      	 Oui – Précisez le % : …………………………………………………………<br>
-                <b><u>Autres avantages :</u></b>………………………………………………………………………………………………………….<br>
+                Salaire de base annuel :{{ $document->salaire_fixe }}<br>
+                Variable (%) :{{ $document->salaire_variable }} – Précisez le % : {{ $document->pourcentage_salaire_variable }}<br>
+                {{--<b><u>Autres avantages :</u></b>{{ $document->date_demande }}<br>--}}
             </td>
         </tr>
         </tbody>
@@ -113,10 +106,10 @@
         <tr>
             <td>
                 <b><u><i>Type de contrat :</i></u></b><br>
-                CDI<br>
-                CDD  	                 du  …………………………….  au …………………………………<br><br>
+                {{ $document->type_contrat }}<br>
+                CDD du  {{ $document->date_debut_cdd }} au {{ $document->date_fin_cdd }} <br><br>
 
-                Durée du travail hebdomadaire……………………………………………………………………………………….<br>
+                Durée du travail hebdomadaire : {{ $document->duree_travail_hebdomadaire }}<br>
             </td>
         </tr>
         </tbody>
@@ -134,8 +127,8 @@
 
                 La présente demande d’ouverture de poste peut-elle être pourvue par :	<br><br>
 
-                - une réorganisation des tâches au sein du service ?     Oui   Non<br>
-                - une mobilité interne ?                                                       Oui   Non<br>
+                - une réorganisation des tâches au sein du service ? {{ $document->reorganisation_tache }}n<br>
+                - une mobilité interne ? {{ $document->mobilite_interne }}<br>
             </td>
         </tr>
         </tbody>
@@ -147,14 +140,15 @@
         <tbody>
         <tr>
             <td style="height : 120px">
-                Commentaires/Observations :
+                Commentaires/Observations : <br>
+                {{ $document->commentaire_rh }}
             </td>
             <td>
-                Visa du responsable RH R/P<br>
-                Nom :<br>
-                Date :<br>
-                Signature :
-            </td>
+            Visa du responsable RH R/P<br>
+            Nom : {{ $document->nom_rh_signature }}<br>
+            Date : {{ $document->date_rh_signature }}<br>
+            Signature :
+        </td>
         </tr>
         </tbody>
     </table>
@@ -170,8 +164,7 @@
     </table>
 
     <br>
-    <span style="color: green"><b>Cas n°1 > REMPLACEMENT OU CREATION DE POSTE BUDGETE AU SEIN D’UNE AGENCE/D’ACTIVITES
-</span></b><br>
+    <span style="color: green"><b>Cas n°1 > REMPLACEMENT OU CREATION DE POSTE BUDGETE AU SEIN D’UNE AGENCE/D’ACTIVITES</span></b><br>
     <br>
 
     <table border="1" style="width: 100%; border-collapse: collapse;">
@@ -275,8 +268,8 @@
                 <u><i><b>A renseigner par le Responsable RH</b></i></u><br><br>
 
                 <b><u>Taleo :</u></b><br>
-                Date de publication du poste : ……………………………………………………………………………………………..<br>
-                Numéro de l’offre : …………………………………………………………………………………………………………..
+                Date de publication du poste : {{ $document->date_publication_taleo }}<br>
+                Numéro de l’offre : {{ $document->numéro_offre }}
             </td>
         </tbody>
     </table>
@@ -290,7 +283,8 @@
             <td>
                 <u><i><b>Annexes à joindre</b></i></u><br><br>
 
-                Descriptif de poste - Profil requis
+                Descriptif de poste {{ $document->descriptif_poste }}<br>
+                Profil requis {{ $document->profil_requis }}
             </td>
         </tbody>
     </table>
