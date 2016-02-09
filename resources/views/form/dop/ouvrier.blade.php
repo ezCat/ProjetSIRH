@@ -37,6 +37,9 @@
             {!! Form::label('prenom', 'Prénom : ') !!}
             {!! Form::text('prenom', null, ['class' => 'form-control']) !!}<br>
 
+            {!! Form::label('entité', 'Entité : ') !!}
+            {!! Form::text('entité', null, ['class' => 'form-control']) !!}<br>
+
             {!! Form::label('direction', 'Direction : ') !!}
             {!! Form::text('direction', null, ['class' => 'form-control']) !!}<br>
 

@@ -3,17 +3,17 @@
 @section('content')
 
     <style type="text/css">
-        body{
+        body {
             font-family: Arial;
         }
     </style>
 
     <table border="1" style="width: 100%; border-collapse: collapse;">
         <thead>
-        <tr>
+        <tr style="height: 6rem;">
             {{--<th width="20%"><img src="{{ assert('img/suez.png') }}"></th>--}}
-            <th width="20%">SUEZ</th>
-            <th>
+            <th width="20%" style="text-align: center">SUEZ</th>
+            <th style="text-align: center">
                 FORMULAIRE DE DEMANDE D’OUVERTURE DE POSTE (DOP)
                 Poste ouvrier (CDD & CDI) au sein d’une agence/ d’activité<br>
                 Pôle : OSIS
@@ -31,10 +31,11 @@
         <tr>
             <td>
                 <b><u><i>Demandeur : </i></u></b><br>
-                Nom : {{ $document->nom }} Prenom :{{ $document->prenom }}<br>
+                Nom : {{ $document->nom }}<br>
+                Prenom : {{ $document->prenom }}<br>
                 Direction : {{ $document->direction }}<br>
-                Entité :{{ $document->entite }}<br>
-                Date de début souhaité :{{ $document->date_debut_souhaite }}
+                Entité : {{ $document->entité }}<br>
+                Date de début souhaité : {{ $document->date_debut_souhaite }}
             </td>
             <td>
                 <b>Visa du demandeur</b><br>
@@ -57,9 +58,21 @@
         </tr>
         <tr>
             <td>
-                Création de poste :{{ $document->creation_poste }}<br>
-                Remplacement de : {{ $document->remplacement }}<br>
-                Accroissement d’activité : {{ $document->accroissement_activite }}
+                @if($document->creation_poste == 1)
+                    <input type="radio" checked> Création de poste<br>
+                @else
+                    <input type="radio"> Création de poste<br>
+                @endif
+                @if($document->remplacement == 1)
+                    <input type="radio" checked> Remplacement de : {{ $document->nom_remplacement }}<br>
+                @else
+                    <input type="radio"> Remplacement de :<br>
+                @endif
+                @if($document->accroissement_activite == 1)
+                    <input type="radio" checked> Accroissement d’activité<br>
+                @else
+                    <input type="radio"> Accroissement d’activité<br>
+                @endif
             </td>
         </tr>
         <tr>
@@ -90,7 +103,8 @@
 
                 <b><u>Rémunération :</u></b><br>
                 Salaire de base annuel :{{ $document->salaire_fixe }}<br>
-                Variable (%) :{{ $document->salaire_variable }} – Précisez le % : {{ $document->pourcentage_salaire_variable }}<br>
+                Variable (%) :{{ $document->salaire_variable }} – Précisez le
+                % : {{ $document->pourcentage_salaire_variable }}<br>
                 {{--<b><u>Autres avantages :</u></b>{{ $document->date_demande }}<br>--}}
             </td>
         </tr>
@@ -107,7 +121,7 @@
             <td>
                 <b><u><i>Type de contrat :</i></u></b><br>
                 {{ $document->type_contrat }}<br>
-                CDD du  {{ $document->date_debut_cdd }} au {{ $document->date_fin_cdd }} <br><br>
+                CDD du {{ $document->date_debut_cdd }} au {{ $document->date_fin_cdd }} <br><br>
 
                 Durée du travail hebdomadaire : {{ $document->duree_travail_hebdomadaire }}<br>
             </td>
@@ -125,7 +139,7 @@
             <td>
                 <b><u><i>A renseigner par le Responsable RH</i></u></b><br><br>
 
-                La présente demande d’ouverture de poste peut-elle être pourvue par :	<br><br>
+                La présente demande d’ouverture de poste peut-elle être pourvue par : <br><br>
 
                 - une réorganisation des tâches au sein du service ? {{ $document->reorganisation_tache }}n<br>
                 - une mobilité interne ? {{ $document->mobilite_interne }}<br>
@@ -144,11 +158,11 @@
                 {{ $document->commentaire_rh }}
             </td>
             <td>
-            Visa du responsable RH R/P<br>
-            Nom : {{ $document->nom_rh_signature }}<br>
-            Date : {{ $document->date_rh_signature }}<br>
-            Signature :
-        </td>
+                Visa du responsable RH R/P<br>
+                Nom : {{ $document->nom_rh_signature }}<br>
+                Date : {{ $document->date_rh_signature }}<br>
+                Signature :
+            </td>
         </tr>
         </tbody>
     </table>
@@ -164,7 +178,8 @@
     </table>
 
     <br>
-    <span style="color: green"><b>Cas n°1 > REMPLACEMENT OU CREATION DE POSTE BUDGETE AU SEIN D’UNE AGENCE/D’ACTIVITES</span></b><br>
+    <span style="color: green"><b>Cas n°1 > REMPLACEMENT OU CREATION DE POSTE BUDGETE AU SEIN D’UNE
+            AGENCE/D’ACTIVITES</span></b><br>
     <br>
 
     <table border="1" style="width: 100%; border-collapse: collapse;">
