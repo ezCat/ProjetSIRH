@@ -13,7 +13,7 @@
 
 @section('content')
 
-    <h1>Demande d'ouverture de poste : Ouvrier</h1>
+    <h1>Demande d'ouverture de poste : ETAM au Siège</h1>
     <br>
 
     {!! Form::open(['url' => route('dop.store')]) !!}
@@ -40,8 +40,11 @@
             {!! Form::label('entité', 'Entité : ') !!}
             {!! Form::text('entité', null, ['class' => 'form-control']) !!}<br>
 
-            {!! Form::label('direction', 'Direction : ') !!}
-            {!! Form::text('direction', null, ['class' => 'form-control']) !!}<br>
+            {!! Form::label('direction', 'Direction Délégué: ') !!}
+            {!! Form::text('direction_delegue', null, ['class' => 'form-control']) !!}<br>
+
+            {!! Form::label('direction', 'Direction de Service: ') !!}
+            {!! Form::text('direction_service', null, ['class' => 'form-control']) !!}<br>
 
             {!! Form::label('date_debut_souhaite', 'Date de début souhaitée : ') !!}
             {!! Form::date('date_debut_souhaite', null, ['class' => 'form-control']) !!}<br>
@@ -90,6 +93,10 @@
             {!! Form::label('salaire_variable', 'Salaire variable : ') !!}<br>
             {!! Form::radio('salaire_variable', 1, null) !!} Oui<br>
             {!! Form::radio('salaire_variable', 0, null) !!} Non<br><br>
+
+            {!! Form::label('', 'Salaire variable : ') !!}<br>
+            {!! Form::radio('voiture', 'service', null) !!} Service<br>
+            {!! Form::radio('voiture', 'fonction', null) !!} Fonction<br><br>
 
             {!! Form::label('', 'Pourcentage variable (Si oui) : ') !!}
             {!! Form::text('pourcentage_salaire_variable', null, ['class' => 'form-control']) !!}<br>
