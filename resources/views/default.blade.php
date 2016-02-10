@@ -11,6 +11,10 @@
 
     <title>Plateforme SI-RH</title>
 
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/start/jquery-ui.css">
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -33,19 +37,36 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">SI RH - </a>
+            <a class="navbar-brand" href="#">SI RH - <span style="color:#CCC;font-size:14px;">{{ substr($_SERVER['AUTH_USER'], 3) }}</span></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a href="{{ route('home') }}">Accueil</a></li>
-                <li><a href="{{ route('dop.create') }}">Ouverture de recrutement</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dossiers <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">DOP</li>
+                          <li><a href="{{ route('dop_cadre_agence') }}">Cadre (Agence)</a></li>
+                          <li><a href="{{ route('dop_cadre_siege') }}">Cadre (Siège)</a></li>
+                          <li><a href="{{ route('dop_cadre_cdm') }}">Cadre (CDM)</a></li>
+                          <li><a href="{{ route('dop_etam_agence') }}">ETAM (Agence)</a></li>
+                          <li><a href="{{ route('dop_etam_siege') }}">ETAM (Siège)</a></li>
+                          <li><a href="{{ route('dop_ouvrier') }}">Ouvrier (Agence)</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ route('contact.create') }}" style="font-weight:bold;color:#880000;">Observations</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
 
 <div class="container" style="margin-top: 70px;">
-
 @yield('content')
 
 </div>
+
+<script type="text/javascript">
+    $(function() {
+        $( "#tabs" ).tabs();
+    });
+</script>

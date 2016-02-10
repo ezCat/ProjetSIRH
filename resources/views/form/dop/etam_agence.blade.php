@@ -16,7 +16,7 @@
     <h1>Demande d'ouverture de poste : ETAM au sein d'une agence</h1>
     <br>
 
-    {!! Form::open(['url' => route('dop.store')]) !!}
+    {!! Form::open(['route' => 'home', 'method' => 'get']) !!}
 
     <div id="tabs">
         <ul>
@@ -40,10 +40,10 @@
             {!! Form::label('entité', 'Entité : ') !!}
             {!! Form::text('entité', null, ['class' => 'form-control']) !!}<br>
 
-            {!! Form::label('direction', 'Direction Délégué: ') !!}
+            {!! Form::label('direction', 'Direction Déléguée: ') !!}
             {!! Form::text('direction_delegue', null, ['class' => 'form-control']) !!}<br>
 
-            {!! Form::label('direction', 'Direction de Service: ') !!}
+            {!! Form::label('direction', 'Direction/Service: ') !!}
             {!! Form::text('direction_service', null, ['class' => 'form-control']) !!}<br>
 
             {!! Form::label('date_debut_souhaite', 'Date de début souhaitée : ') !!}
@@ -137,7 +137,8 @@
         </div>
         <div id="tabs-6">
             {!! Form::label('cas_dop', 'VISA des signataires, cas à choisir : ') !!}
-            {!! Form::select('cas_dop', $cas , null, ['class' => 'form-control']) !!}<br>
+            {!! Form::select('cas_dop', array('Cas n°1 > REMPLACEMENT OU CREATION DE POSTE BUDGETE AU SEIN D’UNE AGENCE/D’ACTIVITES',
+            'Cas n°2 > CREATION DE POSTE NON BUDGETE AU SEIN D’UNE AGENCE/D’ACTIVITES') , null, ['class' => 'form-control']) !!}<br>
         </div>
         <div id="tabs-7">
             {!! Form::label('date_publication_taleo', 'Date de publication TALEO : ') !!}

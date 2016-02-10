@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\DopTest;
+use App\Contact;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class DopController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,9 +27,8 @@ class DopController extends Controller
      */
     public function create()
     {
-//        $cas = array('Cas n°1 > REMPLACEMENT OU CREATION DE POSTE BUDGETE AU SEIN D’UNE AGENCE/D’ACTIVITES',
-//            'Cas n°2 > CREATION DE POSTE NON BUDGETE AU SEIN D’UNE AGENCE/D’ACTIVITES');
-//        return view('form.dop.ouvrier');
+        $gid = substr($_SERVER['AUTH_USER'], 3);
+        return view('form.contact.retours_test', compact('gid'));
     }
 
     /**
@@ -40,7 +39,7 @@ class DopController extends Controller
      */
     public function store(Request $request)
     {
-        DopTest::create($request->all());
+        Contact::create($request->all());
         return redirect('/');
     }
 
@@ -52,8 +51,8 @@ class DopController extends Controller
      */
     public function show($id)
     {
-        $document = DopTest::findOrFail($id);
-        return view('dop.ouvrier', compact('document'));
+        // $document = DopTest::findOrFail($id);
+        // return view('dop.ouvrier', compact('document'));
     }
 
     /**

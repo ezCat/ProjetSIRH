@@ -1,23 +1,16 @@
 @extends('default')
 
-<head>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/start/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script>
-        $(function() {
-            $( "#tabs" ).tabs();
-        });
-    </script>
-</head>
+<style>
+    col
+</style>
 
 @section('content')
 
     <h1>Demande d'ouverture de poste : Ouvrier</h1>
     <br>
 
-    {!! Form::open(['url' => route('dop.store')]) !!}
-
+    {{--{!! Form::open(['url' => route('dop.store')]) !!}--}}
+    {!! Form::open(['route' => 'home', 'method' => 'get']) !!}
     <div id="tabs">
         <ul>
             <li><a href="#tabs-1">Demandeur</a></li>
@@ -31,22 +24,22 @@
         </ul>
 
         <div id="tabs-1">
-            {!! Form::label('nom', 'Nom : ') !!}
+            {!! Form::label('', 'Nom : ') !!}
             {!! Form::text('nom', null, ['class' => 'form-control']) !!}<br>
 
-            {!! Form::label('prenom', 'Prénom : ') !!}
+            {!! Form::label('', 'Prénom : ') !!}
             {!! Form::text('prenom', null, ['class' => 'form-control']) !!}<br>
 
-            {!! Form::label('entité', 'Entité : ') !!}
+            {!! Form::label('', 'Entité : ') !!}
             {!! Form::text('entité', null, ['class' => 'form-control']) !!}<br>
 
-            {!! Form::label('direction', 'Direction : ') !!}
+            {!! Form::label('', 'Direction : ') !!}
             {!! Form::text('direction', null, ['class' => 'form-control']) !!}<br>
 
-            {!! Form::label('date_debut_souhaite', 'Date de début souhaitée : ') !!}
+            {!! Form::label('', 'Date de début souhaitée : ') !!}
             {!! Form::date('date_debut_souhaite', null, ['class' => 'form-control']) !!}<br>
 
-            {!! Form::label('date_demande', 'Date de la demande : ') !!}
+            {!! Form::label('', 'Date de la demande : ') !!}
             {!! Form::date('date_demande', null, ['class' => 'form-control']) !!}<br>
         </div>
         <div id="tabs-2">
@@ -59,7 +52,7 @@
 
             {!! Form::checkbox('accroissement_activite', 1, null) !!} Accroissement d'activité<br><br>
 
-            {!! Form::label('raison_activite', 'Raison de l\'activité : ') !!}
+            {!! Form::label('raison_activite', 'Précisez : ') !!}
             {!! Form::text('raison_activite', null, ['class' => 'form-control']) !!}<br>
 
             {!! Form::label('poste_budgete', 'Poste budgété sur 2016 : ') !!}<br>
@@ -130,7 +123,8 @@
         </div>
         <div id="tabs-6">
             {!! Form::label('cas_dop', 'VISA des signataires, cas à choisir : ') !!}
-            {!! Form::select('cas_dop', $cas , null, ['class' => 'form-control']) !!}<br>
+            {!! Form::select('cas_dop', array('Cas n°1 > REMPLACEMENT OU CREATION DE POSTE BUDGETE AU SEIN D’UNE AGENCE/D’ACTIVITES',
+            'Cas n°2 > CREATION DE POSTE NON BUDGETE AU SEIN D’UNE AGENCE/D’ACTIVITES'), null, ['class' => 'form-control']) !!}<br>
         </div>
         <div id="tabs-7">
             {!! Form::label('date_publication_taleo', 'Date de publication TALEO : ') !!}
@@ -141,13 +135,13 @@
         </div>
         <div id="tabs-8">
             {!! Form::checkbox('descriptif_poste', 1, null) !!} Descriptif de poste<br>
-            {!! Form::checkbox('profil_requis', 1, null) !!} Profil requis<br>
+            {!! Form::checkbox('profil_requis', 1, null) !!} Profil requis<br><br><br>
             {!! Form::submit('Soumettre', ['class' => 'btn btn-primary']) !!}
         </div>
     </div>
-
+    {!! Form::close() !!}
     <br><br><br>
 
-    {!! Form::close() !!}
+
 
 @endsection
