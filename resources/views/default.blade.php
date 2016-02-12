@@ -11,6 +11,8 @@
 
     <title>Plateforme SI-RH</title>
 
+    <link rel="stylesheet" href="{{ asset('css/accueil.css') }}">
+
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/start/jquery-ui.css">
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
@@ -27,41 +29,162 @@
 
 <body>
 
-<!-- Fixed navbar -->
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">SI RH - <span style="color:#CCC;font-size:14px;">{{ substr($_SERVER['AUTH_USER'], 3) }}</span></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="{{ route('home') }}">Accueil</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dossiers <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-header">DOP</li>
-                          <li><a href="{{ route('dop_cadre_agence') }}">Cadre (Agence)</a></li>
-                          <li><a href="{{ route('dop_cadre_siege') }}">Cadre (Siège)</a></li>
-                          <li><a href="{{ route('dop_cadre_cdm') }}">Cadre (CDM)</a></li>
-                          <li><a href="{{ route('dop_etam_agence') }}">ETAM (Agence)</a></li>
-                          <li><a href="{{ route('dop_etam_siege') }}">ETAM (Siège)</a></li>
-                          <li><a href="{{ route('dop_ouvrier') }}">Ouvrier (Agence)</a></li>
-                    </ul>
-                </li>
-                <li><a href="{{ route('contact.create') }}" style="font-weight:bold;color:#880000;">Observations</a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
-    </div>
-</nav>
 
-<div class="container" style="margin-top: 70px;">
-@yield('content')
+<div class="container" style="background-image: url({{ asset('images/fond_pointille.png') }}) ;">
+    <div id="sous_container">
+        <div id="utilisateur">projet rh</div>
+        <div id="bandeau_vert_utilisateur"></div>
+        <div id="bandeau_vert">
+            <div id="nouveau_dossier">
+                Nouveau dossier
+            </div>
+            <div id="recherche">
+                Recherche...
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div id="dossiers">
+            <div class="dossier">
+                <div class="lib_dossier">Dossier n°123</div>
+                <div class="emploi_dossier">
+                    Assistante d'exploitation
+                </div>
+                <div class="zone_dossier">Proximité Nord-Est | <span style="color:#CCC;">Saninord assainissement</span></div>
+                <!-- <div class="clear"></div> -->
+                <div class="infos_dossier">
+                    Ajouté le 12/02/2016
+                </div>
+                <!-- div class="supprimer_dossier">
+                    Supprimer le dossier
+                </div> -->
+                <div class="clear"></div>
+                <div class="phase">
+                    <div class="titre_phase">DOP</div>
+                    <!-- <div class="phase_pourcentage">
+                        <div class="phase_pourcentage_texte">
+                            33%
+                        </div>
+                        <div class="phase_pourcentage_barre">
+                            <div class="phase_pourcentage_barre"></div>    
+                        </div>
+                    </div> -->
+                    <div class="tab_phase">
+                        <div class="tab_phase_haut">Numéro</div>
+                        <div class="tab_phase_haut">Etat</div>
+                        <div class="tab_phase_haut">Date demande</div>
+                        <div class="clear"></div>
+                        <div class="tab_phase_bas">123</div>
+                        <div class="tab_phase_bas orange">En cours</div>
+                        <div class="tab_phase_bas">12/02/2016</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="champ_phase">Modifier</div>
+                    <div class="champ_phase">Exporter</div>
+                    <div class="champ_phase">Imprimer</div>
+                    <div class="champ_phase">Supprimer</div>
+                    <div class="clear"></div>
+                </div>
+                <!-- <div class="phase">
+                    <div class="titre_phase">DRE</div>
+                    
+                    <div class="tab_phase">
+                        <div class="tab_phase_haut">Numéro</div>
+                        <div class="tab_phase_haut">Etat</div>
+                        <div class="tab_phase_haut">Date demande</div>
+                        <div class="clear"></div>
+                        <div class="tab_phase_bas">123</div>
+                        <div class="tab_phase_bas orange">En cours</div>
+                        <div class="tab_phase_bas">12/02/2016</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="champ_phase">Modifier</div>
+                    <div class="champ_phase">Exporter</div>
+                    <div class="champ_phase">Imprimer</div>
+                    <div class="champ_phase">Supprimer</div>
+                    <div class="clear"></div>
+                </div> -->
+                
+            </div>
+            
+        
+            <div class="dossier">
+                <div class="lib_dossier">Dossier n°122</div>
+                <div class="emploi_dossier">
+                    Assistant P2S
+                </div>
+                <div class="zone_dossier">Siège | <span style="color:#CCC;">SITA AMI</span></div>
+                <!-- <div class="clear"></div> -->
+                <div class="infos_dossier">
+                    Ajouté le 11/02/2016
+                </div>
+                <!-- div class="supprimer_dossier">
+                    Supprimer le dossier
+                </div> -->
+                <div class="clear"></div>
+                <div class="phase">
+                    <div class="titre_phase">DOP</div>
+                    <!-- <div class="phase_pourcentage">
+                        <div class="phase_pourcentage_texte">
+                            33%
+                        </div>
+                        <div class="phase_pourcentage_barre">
+                            <div class="phase_pourcentage_barre"></div>    
+                        </div>
+                    </div> -->
+                    <div class="tab_phase">
+                        <div class="tab_phase_haut">Numéro</div>
+                        <div class="tab_phase_haut">Etat</div>
+                        <div class="tab_phase_haut">Date demande</div>
+                        <div class="clear"></div>
+                        <div class="tab_phase_bas">122</div>
+                        <div class="tab_phase_bas vert">Validé</div>
+                        <div class="tab_phase_bas">11/02/2016</div>
+                        <div class="clear"></div>
+                    </div>
+                    <!-- <div class="champ_phase">Modifier</div> -->
+                    <div class="champ_phase">Exporter</div>
+                    <div class="champ_phase">Imprimer</div>
+                    <!-- <div class="champ_phase">Supprimer</div> -->
+                    <div class="clear"></div>
+                </div>
+                <div class="phase">
+                    <div class="titre_phase">DRE</div>
+                    <!-- <div class="phase_pourcentage">
+                        <div class="phase_pourcentage_texte">
+                            33%
+                        </div>
+                        <div class="phase_pourcentage_barre">
+                            <div class="phase_pourcentage_barre"></div>    
+                        </div>
+                    </div> -->
+                    <div class="tab_phase">
+                        <div class="tab_phase_haut">Numéro</div>
+                        <div class="tab_phase_haut">Etat</div>
+                        <div class="tab_phase_haut">Date demande</div>
+                        <div class="clear"></div>
+                        <div class="tab_phase_bas">122</div>
+                        <div class="tab_phase_bas orange">En cours</div>
+                        <div class="tab_phase_bas">12/02/2016</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="champ_phase">Modifier</div>
+                    <div class="champ_phase">Exporter</div>
+                    <div class="champ_phase">Imprimer</div>
+                    <div class="champ_phase">Supprimer</div>
+                    <div class="clear"></div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="bande_bas"></div>
+    <div id="bande_gauche_footer"></div>
+    <div id="logo_suez">
+        <img src="{{ asset('images/logo_suez.png') }}" />
+    </div>
+    <div class="clear"></div>
 
 </div>
 

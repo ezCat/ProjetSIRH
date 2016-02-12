@@ -1,0 +1,284 @@
+@font-face {
+    font-family: 'dinprolight';
+    src: url('../fonts/dinprolight.eot');
+    src: url('../fonts/dinprolight.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dinprolight.ttf') format('truetype'),
+         url('../fonts/dinprolight.svg#dinprolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'dinprobold';
+    src: url('../fonts/dinprobold.eot');
+    src: url('../fonts/dinprobold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dinprobold.ttf') format('truetype'),
+         url('../fonts/dinprobold.svg#dinprolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.clear {
+	clear: both;
+}
+
+body .container{
+	width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#bandeau_vert{
+	background-color: #aadc14;
+	padding: 20px;
+	margin-bottom: 10px;
+}
+
+/*#bande_gauche{
+	float: left;
+	background-color: #0a195d;
+	width: 0.1%;
+	min-height: 69%;
+	max-height: 86%;
+	margin: 2% 0 0 3%;
+}*/
+
+#sous_container{
+	/*float: right;*/
+/*width: 97%;*/
+border-left: 1px solid #ABAFBF;
+padding: 10px 0 40px 35px;
+margin: 20px 0 0 35px;
+}
+
+#utilisateur{
+	font-family: "dinprobold";
+	text-transform: uppercase;
+	font-size: 14px;
+	letter-spacing: -1px;
+	margin: 0 0 0 5px;
+}
+
+#nouveau_dossier{
+	background-color: #0a195d;
+	color: #FFF;
+	font-weight: bold;
+	font-size: 14px;
+	width: 165px;
+	padding: 10px 5px;
+	font-family: "dinprobold";
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	text-align: center;
+	/*margin: 5px;*/
+	float: left;
+	margin-right: 50px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#recherche{
+	float: left;
+	background-color: #fff;
+	padding: 10px;
+	color: #aaa;
+	/*margin: 0 0 0 50px;*/
+	width: 50%;
+	/*max-width: 800px;*/
+	cursor: text;
+}
+
+#bandeau_vert_utilisateur{
+	background-color: #aadc14;
+	height: 3px;
+	width: 30px;
+	margin: -1px 0 10px 5px;
+}
+
+#dossiers{
+
+}
+
+.dossier{
+	margin-bottom: 20px;
+}
+
+.emploi_dossier{
+	/*float: left;*/
+padding: 0 0 0 40px;
+font-size: 16px;
+font-weight: bold;
+font-family: "dinprobold";
+}
+.zone_dossier{
+	text-transform: uppercase;
+	color: #999;
+	font-size: 12px;
+	padding: 0 0 0 40px;
+}
+.infos_dossier{
+	float: left;
+padding: 0 0 0 40px;
+font-size: 12px;
+font-style: italic;
+color: #ccc;
+}
+
+.supprimer_dossier{
+float: left;
+padding: 0 0 0 15px;
+font-size: 12px;
+color: red;
+text-decoration: underline;
+}
+
+#dossiers .lib_dossier{
+	font-family: "dinprobold";
+	font-size: 24px;
+	color: #0a195d;
+	text-transform: uppercase;
+	letter-spacing: -2px;
+	padding: 0 10px;
+}
+
+.dossier_gauche{
+	float: left;
+}
+
+.dossier_droite{
+	float: left;
+}
+
+.dop{
+	float: left;
+	margin: 0 10px;
+}
+
+.dr{
+	float: left;
+	margin: 0 10px;
+}
+
+.dop{
+	border-radius: 40px;
+background-color: #aadc14;
+color: #fff;
+padding: 20px;
+font-size: 18px;
+font-family: "dinprobold";
+}
+
+.rond_dr{
+	border-radius: 40px;
+background-color: #0a195d;
+color: #fff;
+padding: 20px;
+font-size: 18px;
+font-family: "dinprobold";
+}
+
+
+
+/* PHASE */
+
+.phase{
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	margin: 5px 0 10px 40px;
+	border-left: 3px solid #0a195d;
+	max-width: 900px;
+	min-width: 500px;
+}
+
+.titre_phase{
+	color: #0a195d;
+	float: left;
+	font-size: 18px;
+	font-family: "dinprobold";
+	text-transform: uppercase;
+	padding: 10px 25px 10px 15px;
+}
+.tab_phase{
+	float: left;
+	margin: 0 20px;
+}
+
+.tab_phase_haut{
+	float: left;
+	font-size: 12px;
+	color: #0a195d;
+	font-weight: bold;
+	border-bottom: 1px solid #CCC;
+	padding: 5px 10px 0 10px;
+	width: 150px;
+	text-align: left;
+}
+
+.tab_phase_bas{
+	float: left;
+	font-size: 12px;
+	color: #666;
+	font-weight: bold;
+	/*border-bottom: 1px solid #0a195d;*/
+	padding: 5px 10px 3px 10px;
+	width: 150px;
+	text-align: left;
+}
+
+.champ_phase{
+	float: left;
+	font-family: "dinprobold";
+	text-transform: uppercase;
+	font-size: 14px;
+	letter-spacing: -2px;
+	/*text-decoration: underline;*/
+	margin: 12px 10px;
+	cursor: pointer;
+}
+
+.champ_phase:hover{
+	text-decoration: underline;
+}
+
+/* PHASE */
+
+.orange{
+	color: orange;
+}
+
+.vert{
+	color: green;
+}
+
+#bande_bas{
+	background-color: #ABAFBF;
+	height: 1px;
+	width: 98%;
+	margin: 0 1%;
+}
+
+#bande_gauche_footer{
+	float: left;
+	background-color: #ABAFBF;
+	width: 1px;
+	height: 15px;
+	margin: 0 0 0 35px;
+}
+
+#logo_suez{
+	float: right;
+	text-align: right;
+	margin: 0 1% 0 0;
+	width: 10%;
+}
+
+#logo_suez img{
+	width: 100%;
+	vertical-align: top;
+}

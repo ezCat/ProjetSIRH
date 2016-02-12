@@ -21,11 +21,11 @@
     <div id="tabs">
         <ul>
             <li><a href="#tabs-1">Poste</a></li>
-            <li><a href="#tabs-2">Poste et candidats</a></li>
-            <li><a href="#tabs-3">Poste</a></li>
-            <li><a href="#tabs-4">Poste et candidats</a></li>
-            <li><a href="#tabs-5">Poste</a></li>
-            <li><a href="#tabs-6">Poste et candidats</a></li>
+            <li><a href="#tabs-2">Type de contrat</a></li>
+            <li><a href="#tabs-3">Motif</a></li>
+            <li><a href="#tabs-4">Contrat / Chantier</a></li>
+            <li><a href="#tabs-5">Candidats non retenus</a></li>
+            <li><a href="#tabs-6">Candidats retenus</a></li>
         </ul>
 
         <div id="tabs-1">
